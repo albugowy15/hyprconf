@@ -1,0 +1,53 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "height": 20,
+  "modules-left": ["hyprland/workspaces", "custom/power_btn"],
+  "modules-center": ["clock"],
+  "modules-right": ["pulseaudio", "tray", "battery"],
+
+  "custom/power_btn": {
+    "format": "",
+    "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
+  },
+
+  "battery": {
+    "states": {
+      "good": 80,
+      "warning": 30,
+      "critical": 20,
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "",
+    "on-click": "pavucontrol",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""],
+    },
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10,
+  },
+
+  "clock": {
+    "format": "{:%a, %d %b %Y - %H:%M}",
+  },
+}
