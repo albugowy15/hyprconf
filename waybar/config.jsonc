@@ -7,14 +7,9 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "height": 20,
-  "modules-left": ["hyprland/workspaces", "custom/power_btn"],
+  "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": ["pulseaudio", "tray", "battery"],
-
-  "custom/power_btn": {
-    "format": "",
-    "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
-  },
 
   "battery": {
     "states": {
