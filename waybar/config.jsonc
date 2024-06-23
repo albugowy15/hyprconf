@@ -7,9 +7,9 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "height": 20,
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
   "modules-center": ["clock"],
-  "modules-right": ["pulseaudio", "tray", "battery"],
+  "modules-right": ["tray", "pulseaudio", "battery"],
 
   "battery": {
     "states": {
@@ -36,12 +36,12 @@
       "default": ["", "", ""],
     },
   },
-
+  "wlr/taskbar": {
+    "format": "{icon}",
+  },
   "tray": {
-    "icon-size": 16,
     "spacing": 10,
   },
-
   "clock": {
     "format": "{:%a, %d %b %Y - %H:%M}",
   },
